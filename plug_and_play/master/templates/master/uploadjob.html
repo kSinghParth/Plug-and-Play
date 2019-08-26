@@ -1,0 +1,25 @@
+{% extends 'common-layout.html' %}
+{% block navbar %}
+<li><a href="/home">Home</a></li>
+<li><a href="about">About</a></li>
+<li><a href="contact">Contact</a></li>
+{% endblock %}
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div id="content">
+        <form action="/master/uploadjob/" method="post" enctype="multipart/form-data">
+           {% csrf_token %}
+           {{ form.as_p }}
+          <input type="submit" value="Submit">
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}      
