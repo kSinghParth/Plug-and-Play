@@ -14,7 +14,6 @@ from django.contrib.auth import authenticate
 from background_task import background
 import time
 from connect.models import worker
-from master.models import textJob
 from django.utils import timezone
 
 
@@ -48,11 +47,6 @@ def dashboard(request):
 		redirect(reverse('connect:login'))
 	check(request.session['ip'])
 	return render(request,'connect/dashboard.html')
-
-def showtext(request):
-	text= textJob.objects.all()
-	context={'text':text}
-	return render(request,'connect/showtext.html',context)
 
 def openfile(request):
 	return render(request,'connect/openfile.html')
