@@ -1,0 +1,20 @@
+    nasi, 393
+    periosteal, 187
+    subcutaneous, 184, 186
+    subserous, 187
+    subsynovial, 187
+
+  Lipomatosis, diffuse, 187
+
+  Lipping of bone, 527
+
+  Liquor epispasticus, 42
+    puris, 45
+
+  Listerian methods of wound treatment, 242
+
+  Locking of joints, 505
+
+  Lock-jaw, 113
+
+  Locomotor ataxia, joint lesions in, 532

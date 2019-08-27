@@ -1,0 +1,20 @@
+These are known as _opsonins_ or _alexins_, and they act on the bacteria
+by a process comparable to narcotisation, and render them an easy prey
+for the phagocytes.
+
+_Artificial or Passive Immunity._--A form of immunity can be induced by
+the introduction of protective substances obtained from an animal which
+has been actively immunised. The process by which passive immunity is
+acquired depends upon the fact that as a result of the reaction between
+the specific virus of a particular disease (the _antigen_) and the
+tissues of the animal attacked, certain substances--_antibodies_--are
+produced, which when transferred to the body of a susceptible animal
+protect it against that disease. The most important of these antibodies
+are the _antitoxins_. From the study of the processes by which immunity
+is secured against the effects of bacterial action the serum and vaccine
+methods of treating certain infective diseases have been evolved. The
+_serum treatment_ is designed to furnish the patient with a sufficiency
+of antibodies to neutralise the infection. The anti-diphtheritic and the
+anti-tetanic act by neutralising the specific toxins of the
+disease--_antitoxic serums_; the anti-streptcoccic and the serum for
+anthrax act upon the bacteria--_anti-bacterial serums_.

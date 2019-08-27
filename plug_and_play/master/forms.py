@@ -1,6 +1,7 @@
 from django import forms
 
 class UploadJobForm(forms.Form):
-    process = forms.FileField()
-    aggregate = forms.FileField()
+	file = forms.FileField()
+	process = forms.FileField()
+	aggregate = forms.FileField()
     

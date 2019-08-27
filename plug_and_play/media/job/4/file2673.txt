@@ -1,0 +1,20 @@
+
+  Syncope, 249
+    local, 97
+
+  Synostosis, 503
+
+  Synovial membrane, tumours of, 538
+
+  Synovitis, 501, 506
+    gonococcal, 510
+    septic, 506
+    serous, 506, 507
+    suppurative, 507
+    syphilitic, 521
+
+  Syphilis, 147. _See also_ Individual Tissues and Organs
+
+  Syphilis, acquired, 146, 149
+      in infants, 179
+    arsenical preparations in, 162

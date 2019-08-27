@@ -1,0 +1,20 @@
+    treatment, 23
+
+  Seton, 217
+
+  Shell wounds, 231
+
+  Shock, 250
+    delayed, 252
+
+  Shoulder, fibrositis of, 413
+
+  Sinus, 59
+    epithelioma, 500
+    tuberculous, 143
+
+  "606," 162
+
+  Skewers for prevention of haemorrhage, 270
+
+  Skin, 376

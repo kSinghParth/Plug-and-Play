@@ -1,0 +1,20 @@
+    human, 136
+    of joints, 512
+    of lymph glands, 331
+    of lymph vessels, 326
+    modes of infection, 136
+    of muscle, 416
+    of nails, 403
+    open-air treatment of, 137
+    passive hyperaemia in, 138
+    principles of treatment of, 137
+    of skin, 382, 385
+    of tendon sheaths, 423, 424
+    trauma in causation of, 135
+    vaccine treatment in, 138
+
+  Tuberculous abscess, 139
+    arthritic fever, 516
+    dactylitis, 460
+    granulation tissue, 136
+    lupus, 382

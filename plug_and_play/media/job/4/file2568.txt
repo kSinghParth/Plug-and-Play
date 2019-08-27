@@ -1,0 +1,20 @@
+    coli communis, 27
+    diphtheriae 109
+    drum-stick, 112
+    of Ducrey, 154
+    of glanders, 123
+    Klebs-Loffler, 109
+    of malignant oedema, 101
+    mallei, 123
+    pyocyaneus, 29
+    of soft sore, 154
+    of tetanus, 112
+    tubercle, 133
+    typhosus, 29, 452
+
+  Bacteria, death of, 21
+    general characters of, 18
+    pathogenic properties of, 19
+    pyogenic, 24, 29
+
+  Bacterial intoxication, 21

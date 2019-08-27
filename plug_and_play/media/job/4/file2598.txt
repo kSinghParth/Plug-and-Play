@@ -1,0 +1,19 @@
+  Evaporating lotions, 41
+
+  Exfoliation, 438
+
+  Exophthalmos, pulsating, 317
+
+  Exostosis, 191, 481
+    bursata, 481
+    cancellous, 481
+    cartilaginous, 191, 481
+    false, 192
+    ivory, 481
+    multiple, 483
+    spongy, 191, 481
+    subungual, 191, 404, 481
+
+  Explosives, wounds by, 231
+
+  External iliac artery, embolus of, 93

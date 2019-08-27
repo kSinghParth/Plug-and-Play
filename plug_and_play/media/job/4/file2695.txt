@@ -1,0 +1,19 @@
+    cancer from, 395
+    dermatitis from, 239
+    ulcers from, 239
+    warts from, 239
+    in diagnosis of aneurysm, 304
+      arthritis deformans, 530
+      bone diseases, 445
+        tumours, 485, 491, 496
+        tuberculosis, 455
+      foreign bodies, 233
+      joint tuberculosis, 516
+    in treatment of cancer, 208
+      lupus, 385
+      sarcoma, 201
+      tuberculosis, 138
+
+
+
+

@@ -1,0 +1,20 @@
+
+  Diabetic gangrene, 96
+
+  Diarsenol, 163
+
+  Diapedesis of red corpuscles, 32
+
+  Diaphysial aclasis, 483
+
+  Diffuse aneurysm, 302
+    cellulitis, 52
+    fibromatosis, 194
+    lipomatosis, 187
+    neuro-fibromatosis, 355
+    osteoma, 485
+    suppuration, 52
+
+  Diphtheria, 109
+    antitoxin in, 111
+    intubation in, 111

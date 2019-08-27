@@ -1,0 +1,19 @@
+    lymphadenitis, 331
+    lymphangitis, 326
+    onychia, 403
+    sinus, 143
+
+  Tuberculous ulcers, 73, 83
+
+  Tubulo-dermoids, 211
+
+  Tumor albus, 518
+
+  Tumours, 181. _See also_ Individual Tumours and Tissues
+
+  Typhoid, joint lesions in, 508
+    osteomyelitis in, 452
+
+
+  Ulceration, of cartilage, 502, 514
+    definition of, 68

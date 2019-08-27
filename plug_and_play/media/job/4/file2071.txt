@@ -1,0 +1,20 @@
+M     M          M            MB           F.           F             F
+      |                                    |.           |             |
+      |                                  Mother   +--+--+---+--+--+   |
+    +----+                                 |.     |  |  |   |  |  |   |
+    |    |                                 |.     M  M  MB  F  F  F   |
+    M    F                                 |.                         |
+     Not Married                           |.             +---+---+---+---+
+                                           |.             |   |   |   |   |
+                                           |.             MB  M   MB  M   M
+                              .............|.
+                         +-----+-----+-----+-----+-----+
+                         |    .|    .|     |     |     |
+                         |    .|*   .|*    |     |     |
+                         M    MB    MB     F     F     F
+
+
+F = Females.  M = Males (not bleeders).  MB = Males (bleeders)
+
+ ** the patients observed by the authors. The dotted line shows the
+    transmission of the disease to our patients through four

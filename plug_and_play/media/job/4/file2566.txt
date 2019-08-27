@@ -1,0 +1,20 @@
+    traumatic, 524
+    tuberculous, 512
+    urica, 522
+
+  Arthrolysis, 505
+
+  Arthropathies, 532
+    gliomatous, 534
+
+  Arthroplasty, 505
+
+  Articular caries, 502, 514
+
+  Artificial hyperaemia, 39
+
+  Ascites, chylous, 325
+
+  Asepsis, 18
+
+  Asphyxia, local, 97

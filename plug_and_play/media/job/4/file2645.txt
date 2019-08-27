@@ -1,0 +1,19 @@
+    syphilitic, 522
+
+  Osteo-arthropathy, pulmonary, 480
+
+  Osteochondritis dessicans, 544
+
+  Osteogenesis imperfecta, 479
+
+  Osteoid sarcoma, 200
+
+  Osteoma, 191, 481
+    cancellous, 191
+    compact, 192
+    diffuse, 485
+    ivory, 192
+    multiple, 544
+    in muscles and tendons, 416
+    spongy, 191
+    subungual, 191, 404, 481

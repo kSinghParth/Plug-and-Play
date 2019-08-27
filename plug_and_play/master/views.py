@@ -19,8 +19,19 @@ def uploadjob(request):
 			jobid=jobs.objects.aggregate(Max('id'))['id__max']+1
 		form = UploadJobForm(request.POST,request.FILES)
 		if form.is_valid():
+			handle_uploaded_file(request.FILES.get('file'),jobid,'file.txt')
 			handle_uploaded_file(request.FILES.get('process'),jobid,'process.js')
 			handle_uploaded_file(request.FILES.get('aggregate'),jobid,'aggregate.js')
+			splitLen = 10000
+			outputBase = 'media/job/'+str(jobid)+'/file'
+			input = open(outputBase+'.txt', 'r').read().split('\n')
+			at = 1
+			for lines in range(0, len(input), splitLen):
+			    outputData = input[lines:lines+splitLen]
+			    output = open(outputBase + str(at) + '.txt', 'w')
+			    output.write('\n'.join(outputData))
+			    output.close()
+			    at += 1
 			job=jobs()
 			job.save()
 			return redirect(reverse('master:index'))
