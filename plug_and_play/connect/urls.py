@@ -10,7 +10,6 @@ urlpatterns = [
     # path('accounts/', include('allauth.urls')),
     path('login/',views.login , name='login'),
     path('dashboard/',views.dashboard , name='dashboard'),
+    path('process/',views.process , name='process'),
     path('logout/',views.logout_view , name='logout'),
-    path('openfile/',views.openfile , name='openfile'),
-    path('download/',views.download , name='download'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

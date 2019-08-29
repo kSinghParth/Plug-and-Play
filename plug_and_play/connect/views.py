@@ -45,22 +45,12 @@ def login(request):
 def dashboard(request):
 	if request.session['ip']:
 		redirect(reverse('connect:login'))
-	check(request.session['ip'])
 	return render(request,'connect/dashboard.html')
 
-def openfile(request):
-	return render(request,'connect/openfile.html')
-
-def download(request):
-	file_name='check.pdf'
-	file_path = settings.MEDIA_ROOT +'/check.pdf'
-	file_wrapper = FileWrapper(open(file_path,'rb'))
-	file_mimetype = mimetypes.guess_type(file_path)
-	response = HttpResponse(file_wrapper, content_type=file_mimetype )
-	response['X-Sendfile'] = file_path
-	response['Content-Length'] = os.stat(file_path).st_size
-	response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(file_name) 
-	return response
+def process(request):
+	if request.session['ip']:
+		redirect(reverse('connect:login'))
+	return render(request,'connect/process.html')
 
 def logout_view(request):
 	worker.objects.filter(worker_ip=request.session['ip']).delete()
