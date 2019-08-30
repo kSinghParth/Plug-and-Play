@@ -6,7 +6,7 @@ from wsgiref.util import FileWrapper
 import mimetypes
 import os
 from django.utils.encoding import smart_str
-
+from django.http import JsonResponse
 # Create your views here.
 from django.http import HttpResponse ,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
@@ -14,6 +14,7 @@ from django.contrib.auth import authenticate
 from background_task import background
 import time
 from connect.models import worker
+from master.models import task
 from django.utils import timezone
 
 
@@ -50,7 +51,38 @@ def dashboard(request):
 def process(request):
 	if request.session['ip']:
 		redirect(reverse('connect:login'))
-	return render(request,'connect/process.html')
+	id=worker.objects.filter(worker_ip=request.session['ip']).values_list('id')[0][0]
+	tasks=task.objects.filter(workerid=id).values_list('taskid','jobid','id')
+	param={}
+	param['jobid']=str(tasks[0][1])
+	param['tasks']=[]
+	for t in tasks:
+		obj = task.objects.filter(id=t[2]).update(status=1)
+		details = {}
+		details['taskid']=str(t[0])
+		f = open('static/job/'+str(param['jobid'])+'/file'+str(t[0])+'.txt', 'r')
+		file_content = f.read()
+		f.close()
+		details['content']=file_content.replace('\n',' ')
+		details['tid']=t[2]
+		param['tasks'].append(details)
+	return render(request,'connect/process.html',param)
+
+
+def storeresult(request):
+	jobid = request.GET.get('jobid', None)
+	taskid = request.GET.get('taskid', None)
+	tid = request.GET.get('tid', None)
+	content = request.GET.get('content', None)
+	obj = task.objects.filter(id=tid).update(status=2)
+	if not os.path.exists('static/job/'+str(jobid)):
+		os.makedirs('static/job/'+str(jobid))
+	f= open("static/job/"+str(jobid)+"/output"+str(taskid)+".txt","w+")
+	f.write(str(content))
+	f.close()
+	data = {
+	'taken':True}
+	return JsonResponse(data);
 
 def logout_view(request):
 	worker.objects.filter(worker_ip=request.session['ip']).delete()

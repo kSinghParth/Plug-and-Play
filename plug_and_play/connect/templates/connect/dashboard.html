@@ -14,11 +14,9 @@
 				<h3>Hey  {{request.session.ip}}  !!</h3>
 				<hr>
 				<h3>YOU ARE NOW A PART OF THE CLUSTER</h3>
-				<button onclick="process()" class="btn btn-default btn-lg" id="paw"><i class="fa fa-user-circle"></i> START CONTRIBUTING!</button>
+				<a href="/process" ><button class="btn btn-default btn-lg" id="paw"><i class="fa fa-user-circle"></i> START CONTRIBUTING!</button></a>
 			</div>
 		</div>
 	</div>
 </div>
-{% load static %}
-<script src="{% static 'a.js' %}" type="text/javascript"></script>
 {% endblock %}      
