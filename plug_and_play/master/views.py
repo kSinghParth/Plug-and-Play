@@ -13,19 +13,13 @@ import os
 def index(request):
     workers=worker.objects.all()
     context={'workers':workers}
-    # for session in Session.objects.filter(expire_date__gte=timezone.now()):
-    # 	print(session.get_decoded())
-    # print("****************")
-    # for user in User.objects.all():
-    # 	print(user)
     return render(request,'master/master.html',context)
 
 def uploadjob(request):
 	if request.method == 'POST':
-		if jobs.objects.count()==0:
-			jobid=1
-		else:
-			jobid=jobs.objects.aggregate(Max('id'))['id__max']+1
+		job=jobs()
+		job.save()
+		jobid=jobs.objects.aggregate(Max('id'))['id__max']
 		form = UploadJobForm(request.POST,request.FILES)
 		if form.is_valid():
 			handle_uploaded_file(request.FILES.get('file'),jobid,'file.txt')
@@ -39,13 +33,11 @@ def uploadjob(request):
 			for ip in validips:
 				check.append(ip[0])
 			print(check)
-			splitLen = 65000
+			splitLen = 20000
 			outputBase = 'static/job/'+str(jobid)+'/file'
 			input = open(outputBase+'.txt', 'r').read().split('\n')
 			at = 1
 			slave = 0
-			job=jobs()
-			job.save()
 			for lines in range(0, len(input), splitLen):
 			    outputData = input[lines:lines+splitLen]
 			    output = open(outputBase + str(at) + '.txt', 'w')
@@ -62,13 +54,11 @@ def uploadjob(request):
 
 def checkresult(request):
 	jid = jobs.objects.filter(status=0).values_list('id')
-	completed = jobs.objects.filter(status=0).values_list('id')
-	tasks = list(task.objects.filter(jobid=jid[0][0]))
+	completed = jobs.objects.filter(status=2).values_list('id')
 	param={}
-	param['jobid']=str(jid[0][0])
 	param['completed']=[]
 	for comp in completed:
-		f = open('static/job/'+str(param['jobid'])+'/output.txt', 'r')
+		f = open('static/job/'+str(comp[0])+'/output.txt', 'r')
 		file_content = f.read()
 		f.close()
 		details={}
@@ -76,18 +66,23 @@ def checkresult(request):
 		details['content']=file_content
 		param['completed'].append(details)
 	param['outputs']=[]
-	for t in tasks:
-		f = open('static/job/'+str(param['jobid'])+'/output'+str(t.taskid)+'.txt', 'r')
-		file_content = f.read()
-		f.close()
-		param['outputs'].append(file_content)
-	print(param)
+	for job in jid:
+		tasks = list(task.objects.filter(jobid =job[0]))
+		details={}
+		details['jobid']=str(job[0])
+		details['content']=[]
+		for t in tasks:
+			f = open('static/job/'+str(t.jobid)+'/output'+str(t.taskid)+'.txt', 'r')
+			file_content = f.read()
+			f.close()
+			details['content'].append(file_content)
+		param['outputs'].append(details)
 	return render(request,'master/checkresult.html',param)
 
 def storeresult(request):
 	jobid = request.GET.get('jobid', None)
 	content = request.GET.get('content', None)
-	obj = jobs.objects.filter(id=jobid).update(status=0)
+	obj = jobs.objects.filter(id=jobid).update(status=2)
 	if not os.path.exists('static/job/'+str(jobid)):
 		os.makedirs('static/job/'+str(jobid))
 	f= open("static/job/"+str(jobid)+"/output.txt","w+")

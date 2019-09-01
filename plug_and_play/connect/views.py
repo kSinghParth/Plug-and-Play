@@ -52,15 +52,15 @@ def process(request):
 	if request.session['ip']:
 		redirect(reverse('connect:login'))
 	id=worker.objects.filter(worker_ip=request.session['ip']).values_list('id')[0][0]
-	tasks=task.objects.filter(workerid=id).values_list('taskid','jobid','id')
+	tasks=task.objects.filter(workerid=id,status=0).values_list('taskid','jobid','id')
 	param={}
-	param['jobid']=str(tasks[0][1])
 	param['tasks']=[]
 	for t in tasks:
 		obj = task.objects.filter(id=t[2]).update(status=1)
 		details = {}
+		details['jobid']=str(t[1])
 		details['taskid']=str(t[0])
-		f = open('static/job/'+str(param['jobid'])+'/file'+str(t[0])+'.txt', 'r')
+		f = open('static/job/'+str(t[1])+'/file'+str(t[0])+'.txt', 'r')
 		file_content = f.read()
 		f.close()
 		details['content']=file_content.replace('\n',' ')
