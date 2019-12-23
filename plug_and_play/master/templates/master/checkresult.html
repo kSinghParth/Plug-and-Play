@@ -12,10 +12,27 @@
     <div class="col-lg-12">
       <div id="content">
         <h1>Welcome to <span style="color:red">RESULTS</span> Page</h1>
-        <h3>Completed</h3>
+        <!-- <h3>Completed</h3>
         {% for comp in completed %}
           <h3>{{comp.jobid}} : {{comp.content}}</h3>
-        {% endfor %}
+        {% endfor %} -->
+        <table class="table">
+          
+          <tbody>
+            <tr  class="info">
+              <td>Task Id</td>
+              <td>Result</td>
+              <td>Status</td>
+            </tr> 
+            {% for comp in completed %}
+              <tr  class="success">
+              <td>{{comp.jobid}}</td>
+              <td>{{comp.content}}</td>
+              <td>Completed</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

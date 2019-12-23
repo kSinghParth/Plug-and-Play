@@ -13,14 +13,22 @@
 		<div class="col-lg-12">
 			<div id="content">
 				<h3>Process  !!</h3>
+        <div class="loader" id="loader-2">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        
 			</div>
 		</div>
 	</div>
 </div>
-
+ 
 {% for task in tasks %}
 <script src="{% static 'job/'|add:task.jobid|add:'/process.js' %}" type="text/javascript"></script>
 <script type="text/javascript">
+  var d = new Date();
+  var n = d.getTime();
   var foo=pro( "{{ task.content }}" )
   $.ajax({
     url: '/storeresult/',
@@ -35,6 +43,8 @@
      console.log("Success")
    }
  });
+  d=new Date();
+  console.log(d.getTime()-n)
 </script>
 
 {% endfor %}

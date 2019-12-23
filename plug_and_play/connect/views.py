@@ -7,8 +7,7 @@ import mimetypes
 import os
 from django.utils.encoding import smart_str
 from django.http import JsonResponse
-# Create your views here.
-from django.http import HttpResponse ,HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate
 from background_task import background
@@ -52,7 +51,7 @@ def process(request):
 	if request.session['ip']:
 		redirect(reverse('connect:login'))
 	id=worker.objects.filter(worker_ip=request.session['ip']).values_list('id')[0][0]
-	tasks=task.objects.filter(workerid=id,status=0).values_list('taskid','jobid','id')
+	tasks=task.objects.filter(workerid=id,status__lte=1).values_list('taskid','jobid','id')
 	param={}
 	param['tasks']=[]
 	for t in tasks:
